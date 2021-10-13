@@ -1,0 +1,177 @@
+*{
+  padding: 0;
+  margin:0;
+  border:none;
+  outline:none;
+  list-style-type: none;
+}
+body {
+  font-family: "Raleway";
+  font-size: 14px;
+}
+.slider,
+.slider-dots,
+.btn {
+  display: none;
+}
+section {
+  padding: 60px 0;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 15px;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item__main {
+  width: 33.3%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.item__main img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.h4 {
+  font-weight: 700;
+  color: #2d3033;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.text {
+  font-weight: 400;
+  color: #6c7279;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1023px) {
+  section {
+    display: none;
+  }
+  .slider{
+    display: block;
+    max-width: 90%;
+    position: relative;
+    margin: 100px auto;
+    height: 300px;
+    margin-bottom: 15px;
+}
+/* Кнопки вперед и назад */
+  .slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 140px;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(220, 218, 218);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+  .slider .prev {
+    left:-42px;
+  }
+  .slider .next {
+    right: -40px;
+    border-radius: 3px 0 0 3px;
+  }
+  .slider .prev:hover,
+  .slider .next:hover {
+    background-color: rgba(215, 221, 235, 0.5);
+  }
+  .item__main {
+    width: 100%;
+  }
+  /* Пагинация(кружки) */
+  .slider-dots {
+    display: block;
+    text-align: center;
+  }
+  .slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active,
+  .slider-dots_item:hover {
+    background-color: #aaa;
+  }
+  /* Анимация слайдов */
+  .slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  .h4 {
+    font-size: 20px;
+  }
+  .text {
+    width: 350px;
+    font-size: 17px;
+    margin: 0 auto;
+  }
+  @-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+  }
+  @keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section,
+  .btn {
+    display: block;
+  }
+  .slider,
+  .slider-dots {
+    display:none;
+  }
+  .item__main {
+    margin-bottom: 30px;
+  }
+  .display__none {
+    display:none;
+    width: 100%;
+  }
+  .btn {
+    width: 190px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: rgb(93 113 216);
+    border-radius: 4px;
+    font-size: 19px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #f3f3f3;
+    border:2px solid rgb(93 113 216);
+    color: rgb(93 113 216);
+  }
+}
